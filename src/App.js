@@ -1,7 +1,11 @@
+import { Header, Main } from "./components";
+
 function App() {
   return (
-    <div>
-    </div>
+    <>
+      <Header />
+      <Main />
+    </>
   );
 }
 
