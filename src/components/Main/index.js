@@ -11,7 +11,7 @@ const Main = () => {
   }
 
   return (
-    <main>
+    <main className="flex flex-col pt-8 items-center justify-center">
       <Form submitHandler={handleSubmit} />
       <QueryClientProvider client={qc}>
         {/* All components inside the Provider will have access to the Client */}

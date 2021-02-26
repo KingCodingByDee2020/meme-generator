@@ -7,6 +7,7 @@ function renderRandomImage({ data: { memes } }) {
     <img
       src={memes[getRandomIntInclusive(0, memes.length - 1)].url}
       alt="Random meme"
+      className="shadow-lg"
     />
   );
 }
