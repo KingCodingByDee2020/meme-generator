@@ -1,4 +1,5 @@
 import { QueryClient, QueryClientProvider } from "react-query";
+import { ReactQueryDevtools } from "react-query/devtools";
 import Form from "./Form";
 import Meme from "./Meme";
 
@@ -16,6 +17,7 @@ const Main = () => {
       <QueryClientProvider client={qc}>
         {/* All components inside the Provider will have access to the Client */}
         <Meme />
+        <ReactQueryDevtools initialIsOpen={false} />
       </QueryClientProvider>
     </main>
   );
