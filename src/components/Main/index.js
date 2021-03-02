@@ -1,5 +1,9 @@
+// Context is a way for a parent component to provide state to any/all descendants
+// This prevents prop-drilling
 import { TextContext } from "context";
+// `useState` is a hook that keeps track of and updates component state
 import { useState } from "react";
+// `react-query` is to manage SERVER-SIDE STATE
 import { QueryClient, QueryClientProvider } from "react-query";
 import { ReactQueryDevtools } from "react-query/devtools";
 import Form from "./Form";
@@ -8,6 +12,7 @@ import Meme from "./Meme";
 const qc = new QueryClient();
 
 const Main = () => {
+  // Initialize state with `""`
   const [topText, setTopText] = useState("");
   const [bottomText, setBottomText] = useState("");
 

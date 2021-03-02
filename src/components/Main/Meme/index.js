@@ -1,4 +1,5 @@
 import api from "api";
+import { Loader } from "components/base";
 import { getRandomIntInclusive } from "lib";
 import { useQuery } from "react-query";
 import Figure from "./Figure";
@@ -16,7 +17,7 @@ const Meme = () => {
   // ⚠️ Cannot destructure data as it starts as undefined while the fetch is occurring
   const { isSuccess, data } = useQuery("memes", fetchMemeImages);
 
-  return isSuccess ? renderRandomImage(data) : <p>Loading...</p>;
+  return isSuccess ? renderRandomImage(data) : <Loader />;
 };
 
 export default Meme;
