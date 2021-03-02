@@ -15,9 +15,18 @@ const Meme = () => {
   }
 
   // ⚠️ Cannot destructure data as it starts as undefined while the fetch is occurring
-  const { isSuccess, data } = useQuery("memes", fetchMemeImages);
+  const { status, error, data } = useQuery("memes", fetchMemeImages);
 
-  return isSuccess ? renderRandomImage(data) : <Loader />;
+  switch (status) {
+    case "loading":
+      return <Loader />;
+
+    case "error":
+      return <p className="text-red-600">{error.message}</p>;
+
+    default:
+      return renderRandomImage(data);
+  }
 };
 
 export default Meme;
